@@ -1,4 +1,5 @@
 //@dart=2.9
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_x/constants.dart';
@@ -31,7 +32,9 @@ class HomeScreen extends StatelessWidget {
               color: kTextColor,
             )),
         IconButton(
-            onPressed: () {},
+            onPressed: () {
+              //Navigator.pushNamed(context, CartScreen.routeName),
+            },
             icon: SvgPicture.asset(
               'assets/icons/cart.svg',
               color: kTextColor,

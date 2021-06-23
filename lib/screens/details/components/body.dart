@@ -1,10 +1,8 @@
 //@dart=2.9
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_x/models/Product.dart';
 import 'package:shop_x/screens/details/components/add_to_cart.dart';
-import 'package:shop_x/screens/details/components/cart_counter.dart';
 import 'color_and_size.dart';
 import 'counter_and_fav_btn.dart';
 import 'description.dart';

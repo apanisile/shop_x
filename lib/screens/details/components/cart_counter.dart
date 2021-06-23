@@ -1,10 +1,13 @@
 //@dart=2.9
 import 'package:flutter/material.dart';
+import 'package:shop_x/models/Product.dart';
 
 import '../../../constants.dart';
 
 class CartCounter extends StatefulWidget {
-  CartCounter({Key key}) : super(key: key);
+  final Product products;
+  CartCounter({Key key, this.products}) : super(key: key);
+  //CartCounter({Key key}) : super(key: key);
 
   @override
   _CartCounterState createState() => _CartCounterState();
@@ -12,6 +15,7 @@ class CartCounter extends StatefulWidget {
 
 class _CartCounterState extends State<CartCounter> {
   int numOfItems = 1;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -47,6 +51,7 @@ class _CartCounterState extends State<CartCounter> {
     return SizedBox(
       width: 40,
       height: 32,
+      // ignore: deprecated_member_use
       child: OutlineButton(
         padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
