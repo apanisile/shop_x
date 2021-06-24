@@ -9,10 +9,11 @@ class CartItemCard extends StatelessWidget {
 
   const CartItemCard({
     Key key,
-    this.products,
+     this.cartList,
   }) : super(key: key);
 
-  final Product products;
+  //final Product products;
+  final Product cartList;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -26,7 +27,7 @@ class CartItemCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Color(0xFFF5F6F9),
                   borderRadius: BorderRadius.circular(15)),
-              child: Image.asset(products.image),
+              child: Image.asset(cartList.image),
             ),
           ),
         ),
@@ -35,17 +36,17 @@ class CartItemCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              products.title,
+              cartList.title,
               style: TextStyle(fontSize: 16, color: Colors.black),
             ),
             const SizedBox(height: 10),
             Text.rich(TextSpan(
-                text: "\$${products.price}",
+                text: "\$${cartList.price}",
                 style: TextStyle(
                     fontWeight: FontWeight.w600, color: kPrimaryColor),
                 children: [
                   TextSpan(
-                      text: " x${products.numOfItems}",
+                      text: " x${cartList.numOfItems}",
                       style: TextStyle(color: kTextColor))
                 ]))
           ],

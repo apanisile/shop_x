@@ -5,7 +5,8 @@ class Product {
   final String image, title, description;
   final int price, size, id;
   final Color color;
-  final int numOfItems;
+  int numOfItems;
+
   Product({
     this.id,
     this.image,
@@ -15,6 +16,7 @@ class Product {
     this.size,
     this.color,
     this.numOfItems,
+
   });
 }
 
@@ -36,7 +38,7 @@ List<Product> products = [
       description: dummyText,
       image: 'assets/images/bag_2.png',
       color: Color(0xFFd082AE),
-      numOfItems: 2),
+      numOfItems: 1),
   Product(
       id: 3,
       title: "Bag 3",
@@ -45,7 +47,7 @@ List<Product> products = [
       description: dummyText,
       image: 'assets/images/bag_3.png',
       color: Color(0xFFa582AE),
-      numOfItems: 3),
+      numOfItems: 1),
   Product(
       id: 4,
       title: "Bag 4",
@@ -54,7 +56,7 @@ List<Product> products = [
       description: dummyText,
       image: 'assets/images/bag_4.png',
       color: Color(0xFFCD82AE),
-      numOfItems: 4),
+      numOfItems: 1),
   Product(
       id: 5,
       title: "Bag 5",
@@ -63,7 +65,7 @@ List<Product> products = [
       description: dummyText,
       image: 'assets/images/bag_5.png',
       color: Color(0xFFD3A984),
-      numOfItems: 5),
+      numOfItems: 1),
   Product(
       id: 6,
       title: "Bag 6",
@@ -72,8 +74,10 @@ List<Product> products = [
       description: dummyText,
       image: 'assets/images/bag_6.png',
       color: Color(0xFFD3A984),
-      numOfItems: 6),
+      numOfItems: 1),
 ];
+
+
 
 String dummyText =
     "This is the sample text for the products lkfkjan falkfc naslkjf lawekufhklnfs;dfnadjkf";

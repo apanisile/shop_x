@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_x/constants.dart';
-import 'package:shop_x/models/Product.dart';
+import 'package:shop_x/screens/cart/components/CartModel.dart';
 import 'package:shop_x/screens/home/size_config.dart';
 
 import 'components/body.dart';
@@ -34,7 +34,7 @@ class CartScreen extends StatelessWidget {
             style: TextStyle(color: kTextColor),
           ),
           Text(
-            "${products.length} Items",
+            "${cartList.length.toString()} Items",
             style: Theme.of(context).textTheme.caption,
           )
         ],

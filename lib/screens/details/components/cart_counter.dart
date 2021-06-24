@@ -6,6 +6,7 @@ import '../../../constants.dart';
 
 class CartCounter extends StatefulWidget {
   final Product products;
+
   CartCounter({Key key, this.products}) : super(key: key);
   //CartCounter({Key key}) : super(key: key);
 
@@ -15,6 +16,8 @@ class CartCounter extends StatefulWidget {
 
 class _CartCounterState extends State<CartCounter> {
   int numOfItems = 1;
+
+
 
   @override
   Widget build(BuildContext context) {

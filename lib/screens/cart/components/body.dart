@@ -1,8 +1,9 @@
 //@dart=2.9
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_x/constants.dart';
-import 'package:shop_x/models/Product.dart';
+import 'package:shop_x/screens/cart/components/CartModel.dart';
 import 'package:shop_x/screens/home/size_config.dart';
 
 import 'cart_item_card.dart';
@@ -22,11 +23,12 @@ class _BodyState extends State<Body> {
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20.0)),
       child: ListView.builder(
-        itemCount: products.length,
+        itemCount: cartList.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Dismissible(
-            key: Key(products[index].id.toString()),
+
+            key: Key(cartList[index].id.toString()),
             direction: DismissDirection.endToStart,
             background: Container(
               padding: EdgeInsets.symmetric(horizontal: kDefaultPaddin),
@@ -42,10 +44,10 @@ class _BodyState extends State<Body> {
             ),
             onDismissed: (direction) {
               setState(() {
-                products.removeAt(index);
+                cartList.removeAt(index);
               });
             },
-            child: CartItemCard(products: products[index]),
+            child: CartItemCard(cartList: cartList[index]),
           ),
         ),
       ),
