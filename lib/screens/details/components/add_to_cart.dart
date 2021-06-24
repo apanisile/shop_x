@@ -17,7 +17,6 @@ class AddToCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
       child: Row(
@@ -31,8 +30,7 @@ class AddToCart extends StatelessWidget {
                 border: Border.all(color: products.color)),
             child: IconButton(
                 onPressed: () {
-
-                      cartList.add(products);
+                  cartList.add(products);
                 },
                 icon: SvgPicture.asset(
                   "assets/icons/add_to_cart.svg",

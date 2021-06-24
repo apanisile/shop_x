@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:shop_x/models/Product.dart';
 
 import 'package:shop_x/constants.dart';
+import 'package:shop_x/screens/cart/cart_screen.dart';
 import 'package:shop_x/screens/details/components/body.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -35,13 +36,16 @@ class DetailsScreen extends StatelessWidget {
         onPressed: () => Navigator.pop(context),
       ),
       actions: <Widget>[
+        //IconButton(
+          //  onPressed: () {},
+            //icon: SvgPicture.asset(
+              //'assets/icons/search.svg',
+            //)),
         IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'assets/icons/search.svg',
-            )),
-        IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CartScreen()));
+            },
             icon: SvgPicture.asset(
               'assets/icons/cart.svg',
             )),

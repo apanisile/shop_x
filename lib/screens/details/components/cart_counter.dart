@@ -15,7 +15,9 @@ class CartCounter extends StatefulWidget {
 }
 
 class _CartCounterState extends State<CartCounter> {
-  int numOfItems = 1;
+  int _numOfItems = 1;
+
+
 
 
 
@@ -26,16 +28,17 @@ class _CartCounterState extends State<CartCounter> {
         buildOutlineButton(
             icon: Icons.remove,
             press: () {
-              if (numOfItems >= 1) {
+              if (_numOfItems >= 1) {
                 setState(() {
-                  numOfItems--;
+                  // ignore: unnecessary_statements
+                  _numOfItems--;
                 });
               }
             }),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin / 2),
           child: Text(
-            numOfItems.toString().padLeft(2, "0"),
+            _numOfItems.toString().padLeft(2, "0"),
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
@@ -43,7 +46,7 @@ class _CartCounterState extends State<CartCounter> {
             icon: Icons.add,
             press: () {
               setState(() {
-                numOfItems++;
+                _numOfItems++;
               });
             }),
       ],

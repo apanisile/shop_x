@@ -18,6 +18,7 @@ class Product {
     this.numOfItems,
 
   });
+
 }
 
 List<Product> products = [
@@ -76,7 +77,6 @@ List<Product> products = [
       color: Color(0xFFD3A984),
       numOfItems: 1),
 ];
-
 
 
 String dummyText =
