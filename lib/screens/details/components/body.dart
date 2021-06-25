@@ -45,7 +45,7 @@ class Body extends StatelessWidget {
                       SizedBox(height: kDefaultPaddin/2),
                       Description(products: products),
                       SizedBox(height: kDefaultPaddin/2),
-                      CounterWIthFavBtn(),
+                      CounterWIthFavBtn(products: products),
                       SizedBox(height: kDefaultPaddin/2),
                       AddToCart(products: products)
                     ],

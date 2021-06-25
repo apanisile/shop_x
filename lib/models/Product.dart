@@ -16,7 +16,6 @@ class Product {
     this.size,
     this.color,
     this.numOfItems,
-
   });
 
 }
@@ -81,5 +80,3 @@ List<Product> products = [
 
 String dummyText =
     "This is the sample text for the products lkfkjan falkfc naslkjf lawekufhklnfs;dfnadjkf";
-
-

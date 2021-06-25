@@ -1,9 +1,7 @@
 //@dart=2.9
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:shop_x/models/Product.dart';
 import 'package:shop_x/screens/cart/cart_screen.dart';
-import 'package:shop_x/screens/cart/components/CartModel.dart';
 
 import '../../../constants.dart';
 
@@ -21,22 +19,6 @@ class AddToCart extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
       child: Row(
         children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(right: kDefaultPaddin),
-            height: 50,
-            width: 50,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: products.color)),
-            child: IconButton(
-                onPressed: () {
-                  cartList.add(products);
-                },
-                icon: SvgPicture.asset(
-                  "assets/icons/add_to_cart.svg",
-                  color: products.color,
-                )),
-          ),
           Expanded(
             child: SizedBox(
               height: 50,

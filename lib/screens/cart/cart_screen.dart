@@ -46,7 +46,11 @@ class CartScreen extends StatelessWidget {
 class CheckOurCard extends StatelessWidget {
   const CheckOurCard({
     Key key,
+    //Product products,
   }) : super(key: key);
+
+  int get totalPrice =>
+      cartList.fold(0, (total, current) => total + current.price);
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +82,7 @@ class CheckOurCard extends StatelessWidget {
                     text: "Total: \n",
                     children: [
                       TextSpan(
-                        text: "\$300.10",
+                        text: "$totalPrice",
                         style: TextStyle(fontSize: 16, color: Colors.black),
                       ),
                     ],
