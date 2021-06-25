@@ -1,4 +1,6 @@
 //@dart=2.9
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_x/models/Product.dart';
@@ -7,14 +9,12 @@ import '../../../constants.dart';
 import 'cart_counter.dart';
 
 class CounterWIthFavBtn extends StatelessWidget {
+  final Product products;
   const CounterWIthFavBtn({
     Key key,
     Product product,
     this.products,
   }) : super(key: key);
-
-
-  final Product products;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,12 @@ class CounterWIthFavBtn extends StatelessWidget {
                 border: Border.all(color: products.color)),
             child: IconButton(
                 onPressed: () {
-                  cartList.add(products);
+                  if (cartList.contains(products)) {
+                    // ignore: unnecessary_statements
+                    Intent.doNothing;
+                  } else
+                    cartList.add(products);
+                  //cartList.add(products);
                 },
                 icon: SvgPicture.asset(
                   "assets/icons/add_to_cart.svg",

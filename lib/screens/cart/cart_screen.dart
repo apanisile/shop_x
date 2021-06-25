@@ -7,11 +7,16 @@ import 'package:shop_x/screens/home/size_config.dart';
 
 import 'components/body.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
   static var routeName = "/cart";
 
   const CartScreen({Key key}) : super(key: key);
 
+  @override
+  _CartScreenState createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);

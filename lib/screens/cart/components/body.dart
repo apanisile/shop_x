@@ -27,7 +27,6 @@ class _BodyState extends State<Body> {
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Dismissible(
-
             key: Key(cartList[index].id.toString()),
             direction: DismissDirection.endToStart,
             background: Container(
