@@ -18,12 +18,14 @@ class Product {
     this.numOfItems,
   });
 
+
+
 }
 
 List<Product> products = [
   Product(
       id: 1,
-      title: "Office Code",
+      title: "Blue Office Handbag",
       price: 23000,
       size: 41,
       description: dummyText,
@@ -32,7 +34,7 @@ List<Product> products = [
       numOfItems: 1),
   Product(
       id: 2,
-      title: "Office Code",
+      title: "Brown Cross-body Bag",
       price: 23000,
       size: 20,
       description: dummyText,
@@ -41,7 +43,7 @@ List<Product> products = [
       numOfItems: 1),
   Product(
       id: 3,
-      title: "Bag 3",
+      title: "Prada Side Bag",
       price: 45500,
       size: 47,
       description: dummyText,
@@ -50,7 +52,7 @@ List<Product> products = [
       numOfItems: 1),
   Product(
       id: 4,
-      title: "Bag 4",
+      title: "Brown Travelling Bag",
       price: 64000,
       size: 43,
       description: dummyText,
@@ -59,7 +61,7 @@ List<Product> products = [
       numOfItems: 1),
   Product(
       id: 5,
-      title: "Bag 5",
+      title: "Red LV Cross-Body Bag",
       price: 35000,
       size: 48,
       description: dummyText,
@@ -68,7 +70,7 @@ List<Product> products = [
       numOfItems: 1),
   Product(
       id: 6,
-      title: "Bag 6",
+      title: "Black Portable Bag",
       price: 37000,
       size: 41,
       description: dummyText,

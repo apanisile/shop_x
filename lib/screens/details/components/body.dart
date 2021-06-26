@@ -10,11 +10,16 @@ import 'product_with_title_image.dart';
 
 import '../../../constants.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   final Product products;
 
   const Body({Key key, this.products}) : super(key: key);
 
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -28,7 +33,7 @@ class Body extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(top: size.height * 0.3),
                   padding: EdgeInsets.only(
-                      top: size.height * 0.12,
+                      top: size.height * 0.07,
                       left: kDefaultPaddin,
                       right: kDefaultPaddin),
                   //height: 500,
@@ -41,17 +46,17 @@ class Body extends StatelessWidget {
                   ),
                   child: Column(
                     children: <Widget>[
-                      ColorAndSize(products: products),
+                      ColorAndSize(products: widget.products),
                       SizedBox(height: kDefaultPaddin/2),
-                      Description(products: products),
+                      Description(products: widget.products),
                       SizedBox(height: kDefaultPaddin/2),
-                      CounterWIthFavBtn(products: products),
+                      CounterWIthFavBtn(products: widget.products),
                       SizedBox(height: kDefaultPaddin/2),
-                      AddToCart(products: products)
+                      AddToCart(products: widget.products)
                     ],
                   ),
                 ),
-                ProductTitleWithImage(products: products)
+                ProductTitleWithImage(products: widget.products)
               ],
             ),
           )

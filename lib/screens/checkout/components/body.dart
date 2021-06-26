@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_x/constants.dart';
-import 'package:shop_x/screens/cart/components/CartModel.dart';
+import 'package:shop_x/screens/checkout/components/confirmation_page_Mode.dart';
 import 'package:shop_x/screens/home/size_config.dart';
 
-import 'cart_item_card.dart';
+import 'order_confirm_item_card.dart';
 
 class Body extends StatefulWidget {
   //final Product products;

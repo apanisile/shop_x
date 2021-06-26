@@ -1,40 +1,47 @@
 //@dart=2.9
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:shop_x/models/Product.dart';
 
-import '../../../constants.dart';
-
 class CartCounter extends StatefulWidget {
-  final Product products;
-
-  CartCounter({Key key, this.products}) : super(key: key);
-  //CartCounter({Key key}) : super(key: key);
-
   @override
   _CartCounterState createState() => _CartCounterState();
 }
 
 class _CartCounterState extends State<CartCounter> {
-  int _numOfItems = 1;
+  final Product cartList;
 
+  _CartCounterState({this.cartList});
+  var _numOfItems = 0;
+  void add(Product products){
+     products.numOfItems + 1;
+  }
   @override
   Widget build(BuildContext context) {
+
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
+
       children: <Widget>[
         buildOutlineButton(
             icon: Icons.remove,
             press: () {
               if (_numOfItems >= 1) {
                 setState(() {
-                  // ignore: unnecessary_statements
                   _numOfItems--;
+                  setState(() {
+                    //.numOfItems--;
+                  });
                 });
               }
             }),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin / 2),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Text(
             _numOfItems.toString().padLeft(2, "0"),
+            //index.toString().padLeft(2, "0"),
+           // "${products.numOfItems}",
+
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
@@ -43,6 +50,7 @@ class _CartCounterState extends State<CartCounter> {
             press: () {
               setState(() {
                 _numOfItems++;
+
               });
             }),
       ],
@@ -51,14 +59,15 @@ class _CartCounterState extends State<CartCounter> {
 
   SizedBox buildOutlineButton({IconData icon, Function press}) {
     return SizedBox(
-      width: 40,
-      height: 32,
+      width: 20,
+      height: 20,
       // ignore: deprecated_member_use
       child: OutlineButton(
+
         padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
         onPressed: press,
-        child: Icon(icon),
+        child: Center(child: Icon(icon)),
       ),
     );
   }

@@ -4,11 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_x/models/Product.dart';
-import 'package:shop_x/screens/cart/components/CartModel.dart';
-import '../../../constants.dart';
-import 'cart_counter.dart';
+import 'package:shop_x/screens/checkout/components/confirmation_page_Mode.dart';
+//import '../../../constants.dart';
+//import 'cart_counter.dart';
 
-class CounterWIthFavBtn extends StatelessWidget {
+class CounterWIthFavBtn extends StatefulWidget {
   final Product products;
   const CounterWIthFavBtn({
     Key key,
@@ -17,32 +17,39 @@ class CounterWIthFavBtn extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  _CounterWIthFavBtnState createState() => _CounterWIthFavBtnState();
+}
+
+//Add to Cart button
+class _CounterWIthFavBtnState extends State<CounterWIthFavBtn> {
+  @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        CartCounter(),
+
         Expanded(
           child: Container(
-            margin: EdgeInsets.only(left: kDefaultPaddin),
+            //margin: EdgeInsets.only(left: kDefaultPaddin),
             //margin: EdgeInsets.all(8),
             height: 50,
             width: 50,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: products.color)),
+                border: Border.all(color: widget.products.color)),
             child: IconButton(
                 onPressed: () {
-                  if (cartList.contains(products)) {
+                  if (cartList.contains(widget.products)) {
                     // ignore: unnecessary_statements
                     Intent.doNothing;
                   } else
-                    cartList.add(products);
-                  //cartList.add(products);
+                    setState(() {
+                      cartList.add(widget.products);
+                    });
                 },
                 icon: SvgPicture.asset(
                   "assets/icons/add_to_cart.svg",
-                  color: products.color,
+                  color: widget.products.color,
                 )),
           ),
         ),

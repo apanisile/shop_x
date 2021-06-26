@@ -1,15 +1,13 @@
 //@dart=2.9
 import 'package:flutter/material.dart';
 import 'package:shop_x/models/Product.dart';
+
 import 'package:shop_x/screens/home/size_config.dart';
 
-import '../../../constants.dart';
-
 class CartItemCard extends StatelessWidget {
-
   const CartItemCard({
     Key key,
-     this.cartList,
+    this.cartList,
   }) : super(key: key);
 
   //final Product products;
@@ -19,7 +17,7 @@ class CartItemCard extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: getProportionateScreenWidth(88.0),
+          width: getProportionateScreenWidth(90.0),
           child: AspectRatio(
             aspectRatio: 0.88,
             child: Container(
@@ -39,18 +37,23 @@ class CartItemCard extends StatelessWidget {
               cartList.title,
               style: TextStyle(fontSize: 16, color: Colors.black),
             ),
-            const SizedBox(height: 10),
-            Text.rich(TextSpan(
-                text: "\$${cartList.price}",
-                style: TextStyle(
-                    fontWeight: FontWeight.w600, color: kPrimaryColor),
-                children: [
+            Row(
+              children: [
+                const SizedBox(height: 20),
+                Text.rich(
                   TextSpan(
-                      text: " x${cartList.numOfItems}",
-                      style: TextStyle(color: kTextColor))
-                ]))
+                    text: "\$${cartList.price}",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+
+                  ),
+                ),
+              ],
+            ),
           ],
-        )
+        ),
       ],
     );
   }
