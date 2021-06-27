@@ -9,19 +9,18 @@ class CartCounter extends StatefulWidget {
 }
 
 class _CartCounterState extends State<CartCounter> {
-  final Product cartList;
+  final Product products;
 
-  _CartCounterState({this.cartList});
+  _CartCounterState({this.products});
   var _numOfItems = 0;
-  void add(Product products){
-     products.numOfItems + 1;
+  void add(Product products) {
+    products.numOfItems + 1;
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
-
       children: <Widget>[
         buildOutlineButton(
             icon: Icons.remove,
@@ -30,7 +29,7 @@ class _CartCounterState extends State<CartCounter> {
                 setState(() {
                   _numOfItems--;
                   setState(() {
-                    //.numOfItems--;
+                    products.numOfItems--;
                   });
                 });
               }
@@ -40,7 +39,7 @@ class _CartCounterState extends State<CartCounter> {
           child: Text(
             _numOfItems.toString().padLeft(2, "0"),
             //index.toString().padLeft(2, "0"),
-           // "${products.numOfItems}",
+            // "${products.numOfItems}",
 
             style: Theme.of(context).textTheme.headline6,
           ),
@@ -50,7 +49,9 @@ class _CartCounterState extends State<CartCounter> {
             press: () {
               setState(() {
                 _numOfItems++;
-
+                setState(() {
+                  products.numOfItems--;
+                });
               });
             }),
       ],
@@ -63,7 +64,6 @@ class _CartCounterState extends State<CartCounter> {
       height: 20,
       // ignore: deprecated_member_use
       child: OutlineButton(
-
         padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
         onPressed: press,

@@ -7,16 +7,16 @@ import 'package:shop_x/screens/home/size_config.dart';
 
 import 'components/body.dart';
 
-class checkoutScreen extends StatefulWidget {
-  static var routeName = "/cart";
+class CheckoutScreen extends StatefulWidget {
+  static var routeName = "/checkout";
 
-  const checkoutScreen({Key key}) : super(key: key);
+  const CheckoutScreen({Key key}) : super(key: key);
 
   @override
-  _checkoutScreenState createState() => _checkoutScreenState();
+  _CheckoutScreenState createState() => _CheckoutScreenState();
 }
 
-class _checkoutScreenState extends State<checkoutScreen> {
+class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -96,7 +96,7 @@ class CheckOurCard extends StatelessWidget {
                   child: FlatButton(
                     textColor: Colors.red, // foreground
                     onPressed: () {},
-                    child: Text('Check Out'),
+                    child: Text('Check Out', style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, color: Colors.red),),
                   ),
                 ),
               ],

@@ -1,7 +1,7 @@
 //@dart=2.9
 import 'package:flutter/material.dart';
 import 'package:shop_x/models/Product.dart';
-import 'package:shop_x/screens/checkout/checkout_screen.dart';
+import 'package:shop_x/screens/cart/cart_screen.dart';
 
 import '../../../constants.dart';
 
@@ -29,7 +29,7 @@ class AddToCart extends StatelessWidget {
                 color: products.color,
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => checkoutScreen()));
+                      MaterialPageRoute(builder: (context) => cartScreen()));
                 },
                 child: Text(
                   "Buy Now".toUpperCase(),

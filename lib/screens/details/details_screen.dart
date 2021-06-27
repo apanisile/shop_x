@@ -44,7 +44,7 @@ class DetailsScreen extends StatelessWidget {
         IconButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => checkoutScreen()));
+                  MaterialPageRoute(builder: (context) => CheckoutScreen()));
             },
             icon: SvgPicture.asset(
               'assets/icons/cart.svg',
