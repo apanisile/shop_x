@@ -47,7 +47,15 @@ class CartItemCard extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
-
+                  ),
+                ),
+                Text.rich(
+                  TextSpan(
+                    text: "x ${cartList.numOfItems}",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ],

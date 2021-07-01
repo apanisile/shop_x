@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 import 'package:shop_x/models/Product.dart';
 
 import 'package:shop_x/constants.dart';
@@ -20,7 +19,6 @@ class DetailsScreen extends StatelessWidget {
       backgroundColor: products.color,
       appBar: buildAppBar(context),
       body: Body(products: products),
-
     );
   }
 
@@ -36,11 +34,6 @@ class DetailsScreen extends StatelessWidget {
         onPressed: () => Navigator.pop(context),
       ),
       actions: <Widget>[
-        //IconButton(
-          //  onPressed: () {},
-            //icon: SvgPicture.asset(
-              //'assets/icons/search.svg',
-            //)),
         IconButton(
             onPressed: () {
               Navigator.push(context,

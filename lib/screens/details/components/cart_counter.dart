@@ -14,7 +14,7 @@ class _CartCounterState extends State<CartCounter> {
   _CartCounterState({this.products});
   var _numOfItems = 0;
   void add(Product products) {
-    products.numOfItems + 1;
+    //return products.numOfItems + 1;
   }
 
   @override

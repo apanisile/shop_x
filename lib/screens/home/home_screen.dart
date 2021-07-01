@@ -6,6 +6,7 @@ import 'package:shop_x/constants.dart';
 import 'package:shop_x/screens/home/components/body.dart';
 
 class HomeScreen extends StatelessWidget {
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),

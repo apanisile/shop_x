@@ -8,7 +8,7 @@ import 'package:shop_x/screens/home/size_config.dart';
 class PushToCart extends StatelessWidget {
   const PushToCart({
     Key key,
-    // this.products,
+    //this.products,
   }) : super(key: key);
 
   @override

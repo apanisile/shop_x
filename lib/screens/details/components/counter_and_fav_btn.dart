@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_x/models/Product.dart';
-import 'package:shop_x/screens/checkout/components/confirmation_page_Mode.dart';
+import 'package:shop_x/screens/checkout/components/confirmation_page_model.dart';
 //import '../../../constants.dart';
 //import 'cart_counter.dart';
 

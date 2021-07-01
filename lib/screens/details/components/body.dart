@@ -47,11 +47,11 @@ class _BodyState extends State<Body> {
                   child: Column(
                     children: <Widget>[
                       ColorAndSize(products: widget.products),
-                      SizedBox(height: kDefaultPaddin/2),
+                      SizedBox(height: kDefaultPaddin / 2),
                       Description(products: widget.products),
-                      SizedBox(height: kDefaultPaddin/2),
+                      SizedBox(height: kDefaultPaddin / 2),
                       CounterWIthFavBtn(products: widget.products),
-                      SizedBox(height: kDefaultPaddin/2),
+                      SizedBox(height: kDefaultPaddin / 2),
                       AddToCart(products: widget.products)
                     ],
                   ),

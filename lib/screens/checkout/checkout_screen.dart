@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_x/constants.dart';
-import 'package:shop_x/screens/checkout/components/confirmation_page_Mode.dart';
+import 'package:shop_x/screens/checkout/components/confirmation_page_model.dart';
 import 'package:shop_x/screens/home/size_config.dart';
 
 import 'components/body.dart';
@@ -51,8 +51,8 @@ class CheckOurCard extends StatelessWidget {
     //Product products,
   }) : super(key: key);
 
-  int get totalPrice =>
-      cartList.fold(0, (total, current) => (total + current.price) * current.numOfItems);
+  int get totalPrice => cartList.fold(
+      0, (total, current) => (total + current.price) * current.numOfItems);
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +96,13 @@ class CheckOurCard extends StatelessWidget {
                   child: FlatButton(
                     textColor: Colors.red, // foreground
                     onPressed: () {},
-                    child: Text('Check Out', style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, color: Colors.red),),
+                    child: Text(
+                      'Check Out',
+                      style: Theme.of(context).textTheme.bodyText1.copyWith(
+                            fontSize: 20,
+                            color: Colors.red,
+                          ),
+                    ),
                   ),
                 ),
               ],

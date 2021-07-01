@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_x/constants.dart';
-import 'package:shop_x/screens/checkout/components/confirmation_page_Mode.dart';
+import 'package:shop_x/screens/checkout/components/confirmation_page_model.dart';
 import 'package:shop_x/screens/home/size_config.dart';
 
 import 'order_confirm_item_card.dart';
@@ -13,21 +13,26 @@ class Body extends StatefulWidget {
   //const Body({Key key, this.products}) : super(key: key);
 
   @override
-  _BodyState createState() => _BodyState();
+  BodyState createState() => BodyState();
 }
 
-class _BodyState extends State<Body> {
+class BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20.0)),
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(20.0),
+      ),
       child: ListView.builder(
         itemCount: cartList.length,
         itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
           child: Dismissible(
-            key: Key(cartList[index].id.toString()),
+            key: Key(
+              cartList[index].id.toString(),
+            ),
             direction: DismissDirection.endToStart,
             background: Container(
               padding: EdgeInsets.symmetric(horizontal: kDefaultPaddin),
