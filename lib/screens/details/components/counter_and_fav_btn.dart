@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_elegant_number_button/flutter_elegant_number_button.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_x/models/Product.dart';
 import 'package:shop_x/screens/checkout/components/confirmation_page_model.dart';
@@ -10,10 +11,13 @@ import 'package:shop_x/screens/checkout/components/confirmation_page_model.dart'
 
 class CounterWIthFavBtn extends StatefulWidget {
   final Product products;
+
+  final Product cartList;
   const CounterWIthFavBtn({
     Key key,
     Product product,
     this.products,
+    this.cartList,
   }) : super(key: key);
 
   @override
@@ -27,7 +31,22 @@ class _CounterWIthFavBtnState extends State<CounterWIthFavBtn> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-
+        //CartCounter(),
+        Expanded(
+          child: ElegantNumberButton(
+            initialValue: widget.products.numOfItems,
+            buttonSizeHeight: 25,
+            buttonSizeWidth: 25,
+            minValue: 1,
+            maxValue: 20,
+            onChanged: (value) async {
+              setState(() {
+                return widget.products.numOfItems = value;
+              });
+            },
+            decimalPlaces: 0,
+          ),
+        ),
         Expanded(
           child: Container(
             //margin: EdgeInsets.only(left: kDefaultPaddin),
@@ -38,19 +57,21 @@ class _CounterWIthFavBtnState extends State<CounterWIthFavBtn> {
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: widget.products.color)),
             child: IconButton(
-                onPressed: () {
-                  if (cartList.contains(widget.products)) {
-                    // ignore: unnecessary_statements
-                    Intent.doNothing;
-                  } else
-                    setState(() {
-                      cartList.add(widget.products);
-                    });
-                },
-                icon: SvgPicture.asset(
-                  "assets/icons/add_to_cart.svg",
-                  color: widget.products.color,
-                )),
+              onPressed: () {
+                if (cartList.contains(widget.products)) {
+                  // ignore: unnecessary_statements
+                  Intent.doNothing;
+                } else
+                  setState(() {
+                    cartList.add(widget.products);
+
+                  });
+              },
+              icon: SvgPicture.asset(
+                "assets/icons/add_to_cart.svg",
+                color: widget.products.color,
+              ),
+            ),
           ),
         ),
       ],

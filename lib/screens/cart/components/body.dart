@@ -9,9 +9,10 @@ import '../../../constants.dart';
 
 class Body extends StatelessWidget {
   final Product products;
+  final index;
   const Body({
     Key key,
-    @required this.products,
+    @required this.products, this.index,
   }) : super(key: key);
 
   @override

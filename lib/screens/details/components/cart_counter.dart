@@ -3,20 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shop_x/models/Product.dart';
 
+import '../../../constants.dart';
+
 class CartCounter extends StatefulWidget {
+  CartCounter(int index);
+
   @override
   _CartCounterState createState() => _CartCounterState();
 }
 
 class _CartCounterState extends State<CartCounter> {
   final Product products;
+  final Product cartList;
 
-  _CartCounterState({this.products});
-  var _numOfItems = 0;
-  void add(Product products) {
-    //return products.numOfItems + 1;
-  }
+  _CartCounterState({
+    this.products,
+    this.cartList,
+  });
+  var _numOfItems = 1;
 
+  //get index => null;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -29,13 +35,13 @@ class _CartCounterState extends State<CartCounter> {
                 setState(() {
                   _numOfItems--;
                   setState(() {
-                    products.numOfItems--;
+                    //cartList[index].numOfItems-1;
                   });
                 });
               }
             }),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin / 2),
           child: Text(
             _numOfItems.toString().padLeft(2, "0"),
             //index.toString().padLeft(2, "0"),
@@ -50,7 +56,7 @@ class _CartCounterState extends State<CartCounter> {
               setState(() {
                 _numOfItems++;
                 setState(() {
-                  products.numOfItems--;
+                  //cartList.numOfItems+1;
                 });
               });
             }),
@@ -60,12 +66,14 @@ class _CartCounterState extends State<CartCounter> {
 
   SizedBox buildOutlineButton({IconData icon, Function press}) {
     return SizedBox(
-      width: 20,
-      height: 20,
+      width: 40,
+      height: 32,
       // ignore: deprecated_member_use
       child: OutlineButton(
         padding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(13),
+        ),
         onPressed: press,
         child: Center(child: Icon(icon)),
       ),

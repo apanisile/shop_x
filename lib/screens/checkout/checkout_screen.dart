@@ -17,13 +17,17 @@ class CheckoutScreen extends StatefulWidget {
 }
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
+  //int get totalPrice => cartList.fold(
+    //  0, (total, current) => (total + current.price) * current.numOfItems);
+  int totalPrice;
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
       appBar: buildAppBar(context),
       body: Body(),
-      bottomNavigationBar: CheckOurCard(),
+      bottomNavigationBar: CheckOurCard()
     );
   }
 
@@ -37,22 +41,26 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           Text(
             "Order Confirmation",
             style: TextStyle(color: kTextColor),
+
           ),
-          //Text("${cartList.length.toString()} Items",style: Theme.of(context).textTheme.caption,)
+          Text("${cartList.length.toString()} Items",style: Theme.of(context).textTheme.caption,)
         ],
       ),
     );
   }
 }
 
-class CheckOurCard extends StatelessWidget {
+class CheckOurCard extends StatefulWidget {
   const CheckOurCard({
     Key key,
     //Product products,
   }) : super(key: key);
 
-  int get totalPrice => cartList.fold(
-      0, (total, current) => (total + current.price) * current.numOfItems);
+  @override
+  _CheckOurCardState createState() => _CheckOurCardState();
+}
+
+class _CheckOurCardState extends State<CheckOurCard> {
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +90,13 @@ class CheckOurCard extends StatelessWidget {
                 Text.rich(
                   TextSpan(
                     text: "Total: \n",
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline5
+                        .copyWith(fontSize: 20, color: Colors.black),
                     children: [
                       TextSpan(
-                        text: "$totalPrice",
+                        text: "${totalPrice.toString()}",
                         style: TextStyle(fontSize: 16, color: Colors.black),
                       ),
                     ],
@@ -113,3 +125,5 @@ class CheckOurCard extends StatelessWidget {
     );
   }
 }
+
+//totalPrice.toString()
