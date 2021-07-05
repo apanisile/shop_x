@@ -35,8 +35,8 @@ class _CounterWIthFavBtnState extends State<CounterWIthFavBtn> {
         Expanded(
           child: ElegantNumberButton(
             initialValue: widget.products.numOfItems,
-            buttonSizeHeight: 25,
-            buttonSizeWidth: 25,
+            buttonSizeHeight: 30,
+            buttonSizeWidth: 30,
             minValue: 1,
             maxValue: 20,
             onChanged: (value) async {
@@ -45,6 +45,7 @@ class _CounterWIthFavBtnState extends State<CounterWIthFavBtn> {
               });
             },
             decimalPlaces: 0,
+            color: widget.products.color,
           ),
         ),
         Expanded(
@@ -64,7 +65,6 @@ class _CounterWIthFavBtnState extends State<CounterWIthFavBtn> {
                 } else
                   setState(() {
                     cartList.add(widget.products);
-
                   });
               },
               icon: SvgPicture.asset(
